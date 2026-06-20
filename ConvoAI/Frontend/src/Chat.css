@@ -1,7 +1,12 @@
 .chats {
     max-width: 700px;
-    overflow-y: scroll;
-    padding: 8rem;
+    width: 100%;
+    overflow-y: auto;
+    padding: 2rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .userDiv {
@@ -10,19 +15,42 @@
     font-size: 0.9rem;
 }
 
-
 .gptDiv {
     text-align: left;
     font-size: 0.9rem;
+    position: relative;
 }
 
 .userMessage {
-    background-color: #323232;
+    background-color: var(--bg-user-msg);
     padding: 10px 20px;
     border-radius: 14px;
-    margin-left: 15rem;
     max-width: 500px;
     width: fit-content;
+    color: var(--text-primary);
+}
+
+.speakBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+}
+
+.speakBtn:hover {
+    color: var(--text-primary);
+}
+
+.speakBtn.playing {
+    color: #339cff;
 }
 
 .hljs {
@@ -31,4 +59,10 @@
 
 pre {
     white-space: pre-wrap;
+}
+
+.newChatMsg {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    margin: auto;
 }
